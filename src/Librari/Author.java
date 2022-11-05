@@ -3,6 +3,7 @@ package Librari;
 public class Author {
     private String firstNameAuthor;
     private String lastNameAuthor;
+
     public Author(String firstName, String lastNameAuthor) {
         this.firstNameAuthor = firstName;
         this.lastNameAuthor = lastNameAuthor;
@@ -19,16 +20,19 @@ public class Author {
     public void setFirstNameAuthor(String firstNameAuthor) {
         if (firstNameAuthor != null) {
             this.firstNameAuthor = firstNameAuthor;
+        } else {
+            System.out.println("Имя автора не указано.");
         }
-        System.out.println("Имя автора не указано.");
     }
 
     public void setLastNameAuthor(String lastNameAuthor) {
         if (lastNameAuthor != null) {
             this.lastNameAuthor = lastNameAuthor;
+        } else {
+            System.out.println("Имя автора не указано.");
         }
-        System.out.println("Имя автора не указано.");
     }
+
 
     @Override
     public String toString() {
