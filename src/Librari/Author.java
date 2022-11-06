@@ -1,5 +1,7 @@
 package Librari;
 
+import java.util.Objects;
+
 public class Author {
     private String firstNameAuthor;
     private String lastNameAuthor;
@@ -29,13 +31,25 @@ public class Author {
         if (lastNameAuthor != null) {
             this.lastNameAuthor = lastNameAuthor;
         } else {
-            System.out.println("Имя автора не указано.");
+            System.out.println("Фамилия автора не указана.");
         }
     }
-
 
     @Override
     public String toString() {
         return firstNameAuthor + " " + lastNameAuthor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return firstNameAuthor.equals(author.firstNameAuthor) && lastNameAuthor.equals(author.lastNameAuthor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstNameAuthor, lastNameAuthor);
     }
 }
